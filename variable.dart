@@ -24,6 +24,12 @@ void main() {
   print(somevalue.length);
 
   dynamic hello = '123123124';
-  print(hello + 3 ); // it will give compile time error
-  
+  print(hello + 3); // it will give compile time error
+
+  //how to change variable name
+  // dart is case sensative
+
+  int first = 20;
+  first = 100;
+  print(first);
 }

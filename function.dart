@@ -79,13 +79,30 @@
 //   return (age: 12, name: 'Nigam');
 // }
 
+// void main() {
+//   final stuff = printStuff();
+//   print(stuff());
+//   print(() {
+//     print('yooo');
+//   }());
+// }
+
+// Function printStuff() {
+//   return () {
+//     print('yooo');
+//   };
+// }
+
 void main() {
-  final stuff = printStuff();
-  print(stuff);
+  final name = printStuff();
+  print(name);
 }
 
-Function printStuff() {
-  return () {
-    print('yooo');
-  };
-}
+// String printStuff() {
+//   return 'Rivan';
+// }
+
+// this upper thing can be written as this also
+
+String printStuff() => 'Rivan'; //fat arrow function or arrow function and this is used when we have only one statement to be executed
+ 

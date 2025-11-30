@@ -108,11 +108,68 @@
 //   }
 // }
 
+// void main() {
+//   // final constants = Constants(); // here we cannot do constants.greeting like thing unless we have static variables
+//   // // print(constants.greeting); // it cannot be accessed since we make greeting static which mean it cannot be accessed by instance of the class
+//   // print(constants.bye);
+//   print(Constants.greeting);
+//   print(Constants.bye);
+//   print(Constants.giveMeSomeValue());
+// }
+
+// class Constants {
+//   int height = 10;
+//   // Constants() {
+//   //   print('constructor called');
+//   // } //here no constructor will be called when we use static
+//   static String greeting = 'Hello, how are you?';
+//   static String bye = 'Bye!';
+
+//   //static functions
+
+//   static int giveMeSomeValue() {
+//     return 10; // if we do return height; then we cannot do that since height is not static and function is static so both of them should be static or non static
+//   }
+// }
+
 void main() {
-  
+  //Inheritance
+  // "is-a relation" then we use most of the time inheritance
+  // OOP
+
+  Car car = Car();
+  print(car.isEngineWorking);
+  print(car.noOfWheels);
+
+// Vehicle car = Car();
+//   print(car.isEngineWorking);
+//   print((car as Car ).noOfWheels); // we can do this also since car is child of vehicle but when some variables which are not decleared iniside vehicle will give error in that place we can do car as Car which me to assume vehicle car as Car 
+ 
+  Truck truck = Truck();
+  print(truck.noOfWheels);
+  print(truck.isEngineWorking);
 }
 
-class Constants {
-  String greeting = 'Hello, how are you?';
+class Vehicle {
+  int speed = 10;
+  bool isEngineWorking = false;
+  bool isLightOn = true;
 
+  void acceleration() {
+    speed += 10;
+  }
 }
+
+class Car extends Vehicle {
+  //here extends Vehicle mean car is inheriting from vehicle class
+  int noOfWheels = 4;
+  void printSomething() {
+    print(noOfWheels);
+  }
+}
+
+class Truck extends Vehicle {
+  int noOfWheels = 10;
+}
+
+// dart doesnot support multiple inheritance means cannot extends two class at same time

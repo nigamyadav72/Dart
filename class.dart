@@ -132,44 +132,143 @@
 //   }
 // }
 
-void main() {
-  //Inheritance
-  // "is-a relation" then we use most of the time inheritance
-  // OOP
+// void main() {
+//   //Inheritance
+//   // "is-a relation" then we use most of the time inheritance
+//   // OOP
 
-  Car car = Car();
-  print(car.isEngineWorking);
-  print(car.noOfWheels);
-
-// Vehicle car = Car();
+//   Car car = Car();
 //   print(car.isEngineWorking);
-//   print((car as Car ).noOfWheels); // we can do this also since car is child of vehicle but when some variables which are not decleared iniside vehicle will give error in that place we can do car as Car which me to assume vehicle car as Car 
- 
-  Truck truck = Truck();
-  print(truck.noOfWheels);
-  print(truck.isEngineWorking);
-}
+//   print(car.noOfWheels);
 
-class Vehicle {
-  int speed = 10;
-  bool isEngineWorking = false;
-  bool isLightOn = true;
+// // Vehicle car = Car();
+// //   print(car.isEngineWorking);
+// //   print((car as Car ).noOfWheels); // we can do this also since car is child of vehicle but when some variables which are not decleared iniside vehicle will give error in that place we can do car as Car which me to assume vehicle car as Car
 
-  void acceleration() {
-    speed += 10;
-  }
-}
+//   Truck truck = Truck();
+//   print(truck.noOfWheels);
+//   print(truck.isEngineWorking);
+// }
 
-class Car extends Vehicle {
-  //here extends Vehicle mean car is inheriting from vehicle class
-  int noOfWheels = 4;
-  void printSomething() {
-    print(noOfWheels);
-  }
-}
+// class Vehicle {
+//   int speed = 10;
+//   bool isEngineWorking = false;
+//   bool isLightOn = true;
 
-class Truck extends Vehicle {
-  int noOfWheels = 10;
-}
+//   void acceleration() {
+//     speed += 10;
+//   }
+// }
+
+// class Car extends Vehicle {
+//   //here extends Vehicle mean car is inheriting from vehicle class
+//   int noOfWheels = 4;
+//   void printSomething() {
+//     print(noOfWheels);
+//   }
+// }
+
+// class Truck extends Vehicle {
+//   int noOfWheels = 10;
+// }
 
 // dart doesnot support multiple inheritance means cannot extends two class at same time
+
+// void main() {
+//   // Car car = Car();
+//   // print(car.isEngineWorking);
+//   // print(car.noOfWheels);
+
+//   // Truck truck = Truck();
+//   // print(truck.noOfWheels);
+//   // print(truck.isEngineWorking);
+
+//   final car = Car();
+//   car.accelerate();
+// }
+
+// class OtherClass {
+//   bool isEngineWorking = false;
+//   bool isLightOn = true;
+//   int noOfWheels = 10;
+// }
+
+// class Vehicle {
+//   bool isEngineWorking = false;
+//   bool isLightOn = true;
+//   int noOfWheels = 10;
+
+//   void accelerate() {
+//     print('accelerating');
+//   }
+// }
+
+// // class Car extends Vehicle {
+// //   @override
+// //   bool isEngineWorking = false;
+
+// //   @override
+// //   bool isLightOn = true;
+
+// //   @override
+// //   int noOfWheels = 4;
+
+// //   @override
+// //   void accelerate() {
+// //     // super.accelerate();  if we use extends then we can do super. and do somefunctions here super represents parent class from which it inherits but in implements we cannot do that
+// //     print('accelerating the car');
+// //     //super can modify the behavior
+// //   }
+// // }
+
+// class Car extends OtherClass implements Vehicle {
+//   //here we and extends and implements different classes at the same time for implemented class we have to use @override and for extends class we donot need to mention the attributes and methods
+
+//   @override
+//   void accelerate() {
+//     print(isEngineWorking);
+//     print(isLightOn);
+//     print(noOfWheels);
+//   }
+// }
+
+// class Truck implements Vehicle {
+//   @override
+//   int noOfWheels = 6;
+//   @override
+//   bool isEngineWorking = false;
+
+//   @override
+//   bool isLightOn = true;
+
+//   @override
+//   void accelerate() {
+//     print('accelerating the truck');
+//   }
+// }
+// here implements support multiple inheritance 
+
+
+void main() {
+  final car = Car();
+  car.accelerate();
+}
+
+abstract class Vehicle {
+  void
+  accelerate(); // abstract class is defined by writting abstract in front of class and here we can define function without its code block or body of function unlike normal class
+  int noOfWheels = 10;
+
+}
+
+// here we have to override function of abstract class either we are extending or implementing that 
+class Car extends Vehicle {
+  @override
+  void accelerate() {
+    print('accelerating $noOfWheels');
+  }
+}
+
+// class Truck implements Vehicle {
+
+//}

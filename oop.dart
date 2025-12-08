@@ -1,6 +1,7 @@
 // void main() {
 //   //object oriented programming (OOP)
-//   // 1. Polymorphism
+//   // 1. Polymorphism : it specially uses override method
+
 
 //   Animal cat = Cat();
 //   cat.sound();
